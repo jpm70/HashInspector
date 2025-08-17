@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HashInspector - Analizador de Hashes</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo de HashInspector" class="logo">
+        <h1>HashInspector 🕵️‍♂️</h1>
+        <p>Genera y verifica hashes de texto o archivos de manera instantánea.</p>
+
+        <div class="input-section">
+            <textarea id="inputText" placeholder="Introduce el texto aquí..."></textarea>
+            <div class="file-upload">
+                <label for="fileInput" class="custom-file-upload">O seleccionar un archivo</label>
+                <input type="file" id="fileInput">
+                <span id="fileName"></span>
+            </div>
+            
+            <button id="analyzeBtn">Analizar</button>
+        </div>
+
+        <div class="results-section hidden" id="resultsSection">
+            <h2>Resultados</h2>
+            <div class="hash-result">
+                <h3>MD5</h3>
+                <code id="md5Output"></code>
+            </div>
+            <div class="hash-result">
+                <h3>SHA-1</h3>
+                <code id="sha1Output"></code>
+            </div>
+            <div class="hash-result">
+                <h3>SHA-256</h3>
+                <code id="sha256Output"></code>
+            </div>
+            <div class="hash-result">
+                <h3>SHA-512</h3>
+                <code id="sha512Output"></code>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
