@@ -1,49 +1,125 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HashInspector - Analizador de Hashes</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <img src="logo.png" alt="Logo de HashInspector" class="logo">
-        <h1>HashInspector 🕵️‍♂️</h1>
-        <p>Genera y verifica hashes de texto o archivos de manera instantánea.</p>
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+}
 
-        <div class="input-section">
-            <textarea id="inputText" placeholder="Introduce el texto aquí..."></textarea>
-            <div class="file-upload">
-                <label for="fileInput" class="custom-file-upload">O seleccionar un archivo</label>
-                <input type="file" id="fileInput">
-                <span id="fileName"></span>
-            </div>
-            
-            <button id="analyzeBtn">Analizar</button>
-        </div>
+.container {
+    background-color: #161b22;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
 
-        <div class="results-section hidden" id="resultsSection">
-            <h2>Resultados</h2>
-            <div class="hash-result">
-                <h3>MD5</h3>
-                <code id="md5Output"></code>
-            </div>
-            <div class="hash-result">
-                <h3>SHA-1</h3>
-                <code id="sha1Output"></code>
-            </div>
-            <div class="hash-result">
-                <h3>SHA-256</h3>
-                <code id="sha256Output"></code>
-            </div>
-            <div class="hash-result">
-                <h3>SHA-512</h3>
-                <code id="sha512Output"></code>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+h1 {
+    color: #58a6ff;
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #8b949e;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+    background-color: #010409;
+    color: #e6edf3;
+    font-size: 1em;
+    resize: vertical;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+#fileInput {
+    display: none;
+}
+
+.custom-file-upload {
+    background-color: #2ea043;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #238636;
+}
+
+#fileName {
+    margin-left: 10px;
+    font-style: italic;
+}
+
+#analyzeBtn {
+    background-color: #58a6ff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1em;
+}
+
+#analyzeBtn:hover {
+    background-color: #4c91e1;
+}
+
+.results-section {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+.hash-result {
+    background-color: #21262d;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.hash-result h3 {
+    margin: 0 0 10px 0;
+    color: #c9d1d9;
+}
+
+code {
+    background-color: #010409;
+    padding: 8px;
+    border-radius: 4px;
+    display: block;
+    word-break: break-all;
+    white-space: pre-wrap;
+    font-size: 0.9em;
+}
